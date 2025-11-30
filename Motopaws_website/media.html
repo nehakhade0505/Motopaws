@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #fff8eb;
+        font-family: "Open Sans", sans-serif;
+        color: #0379c6;
+        cursor: url("path/to/your/paw.png") 10 10, auto;
+      }
+
+      /* ---------------- NAVBAR ---------------- */
+      .navbar-custom {
+        background-color: #ffd54f;
+        padding: 15px 0;
+      }
+
+      .navbar-custom .nav-link {
+        color: #004b87 !important;
+        font-weight: 500;
+      }
+
+      /* Hide mobile logo on desktop */
+      .mobile-logo {
+        display: none;
+      }
+
+      @media (max-width: 991px) {
+        .mobile-logo {
+          display: block !important;
+        }
+        .center-logo {
+          display: none !important;
+        }
+        #navMenu .navbar-nav {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          text-align: left !important;
+        }
+        #navMenu .nav-item {
+          width: 100%;
+          justify-content: flex-start !important;
+        }
+      }
+      /* OUTER SECTION */
+      .story-section {
+        background-color: #fff8ef;
+        padding: 50px 20px;
+      }
+
+      /* OUTER DIV — CENTERED */
+      .story-container {
+        max-width: 1200px; /* controls width */
+        margin: 0 auto; /* centers the entire div */
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+      }
+
+      /* IMAGE */
+      .story-image img {
+        width: 380px; /* increased image size */
+        height: auto;
+        border-radius: 8px;
+        display: block;
+      }
+
+      /* TEXT DIV — aligned right but content left-aligned */
+      .story-content {
+        flex: 1;
+        text-align: left;
+      }
+
+      .story-content h2 {
+        font-family: "Mochiy Pop One", sans-serif;
+        font-size: 2.4rem;
+        color: #0379c6;
+        margin-bottom: 10px;
+      }
+
+      .story-content p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* ---------- MOBILE RESPONSIVE ---------- */
+      @media (max-width: 768px) {
+        .story-container {
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+        }
+
+        .story-image img {
+          width: 95%;
+          max-width: 420px;
+        }
+
+        .story-content h2 {
+          text-align: center;
+        }
+
+        .story-content p {
+          width: 90%;
+          margin: 0 auto;
+          text-align: left;
+        }
+      }
+      /* testimonials */
+      .testimonials-section {
+        background: #fff9e8;
+        padding-bottom: 40px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      /* ------------------- TESTIMONIALS CONTAINER ------------------- */
+      /* ------------------- HEADER STYLES ------------------- */
+      .header-container {
+        background-color: #ffd54f; /* Yellow background for the header bar */
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .header-title {
+        color: #0379c6;
+        font-family: "Mochiy Pop One", sans-serif;
+        font-size: 2em; /* Adjust size as needed */
+        font-weight: 400;
+        margin: 0;
+        padding: 0 20px;
+      }
+
+      /* ------------------- TESTIMONIALS CONTAINER ------------------- */
+      img {
+        border-radius: 15;
+      }
+      .testimonials-section {
+        padding: 40px 20px;
+        /* Flexbox is used to center the cards and make them responsive */
+        display: flex;
+        flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+        justify-content: center; /* Centers the cards horizontally */
+        gap: 20px; /* Space between the cards */
+      }
+
+      /* ------------------- INDIVIDUAL TESTIMONIAL CARD ------------------- */
+      .testimonial-card {
+        background-color: #fff5d2; /* Matches the body background */
+        width: 100%; /* Default to full width for small screens */
+        max-width: 300px; /* Maximum width for the card */
+        border-radius: 15px;
+        box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+        padding: 20px;
+        text-align: left; /* Content inside is left-aligned */
+        box-shadow: #555;
+      }
+      img {
+        border-radius: 15px;
+      }
+      .testimonial-card .name {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #0068ad; /* Blue color for names */
+        margin-bottom: 10px;
+      }
+
+      .testimonial-card .testimonial-image {
+        width: 100%;
+        height: 150px; /* Fixed height for consistency */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+
+        margin-bottom: 15px;
+        display: block; /* Remove extra space below image */
+      }
+
+      .testimonial-card .testimonial-text {
+        color: #0379c6; /* Blue color for the "Testimonial :" label */
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .testimonial-card .content {
+        font-style: italic;
+        font-size: 0.95em;
+        color: #555;
+      }
+
+      /* ------------------- RESPONSIVENESS (Media Queries) ------------------- */
+      /* Tablet and larger screens: display two cards per row */
+      @media (min-width: 600px) {
+        .testimonial-card {
+          width: calc(50% - 30px); /* 50% width minus the gap */
+        }
+      }
+
+      /* Desktop screens: display three cards per row */
+      @media (min-width: 992px) {
+        .testimonial-card {
+          width: calc(33.333% - 20px); /* 33.333% width minus the gap */
+        }
+      }
+
+      /* footer */
+      .footer {
+        width: 100%;
+        background-color: #ffd454; /* yellow strip */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 40px; /* thinner strip */
+        box-sizing: border-box;
+      }
+
+      .footer-left a {
+        margin-right: 18px;
+        font-size: 22px;
+        color: #0e4a94;
+        text-decoration: none;
+      }
+
+      .footer-left a:hover {
+        opacity: 0.7;
+      }
+
+      .footer-right {
+        font-size: 16px;
+        color: #080f93;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .footer {
+          flex-direction: column;
+          text-align: center;
+          gap: 6px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ---------------- NAVIGATION BAR ---------------- -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container d-flex justify-content-between align-items-center">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="mobile-logo" href="homepage.html">
+          <img src="images/motopaws.png" alt="Logo" style="height: 65px" />
+        </a>
+
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navMenu"
+        >
+          <ul
+            class="navbar-nav w-100 d-flex justify-content-between align-items-center text-center"
+          >
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="homepage.html">Home</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="ourwork.html">Our Work</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="help_us.html">Help Us</a>
+            </li>
+
+            <li class="nav-item flex-fill center-logo">
+              <a
+                class="navbar-brand d-flex justify-content-center"
+                href="homepage.html"
+              >
+                <img
+                  src="images/motopaws.png"
+                  alt="Logo"
+                  style="height: 70px"
+                />
+              </a>
+            </li>
+
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="media.html">Media</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="story-section">
+      <div class="story-container">
+        <div class="story-image">
+          <img src="images/story.png" alt="Story Image" />
+        </div>
+
+        <div class="story-content">
+          <h2>Story of the Week</h2>
+          <p>
+            This week, our team fitted a MotoPaws reflective collar on Biscuit,
+            a shy street dog living near a busy junction. With his new collar,
+            he’s now safer, more visible at night, and confidently exploring his
+            neighbourhood. Local shopkeepers say they instantly noticed the
+            change - <br />Biscuit stands out, stays out of danger, and gets a
+            little more love from everyone who sees him. A small collar, a big
+            difference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimonials -->
+    <div class="header-container">
+      <h2 class="header-title">What others are saying......</h2>
+    </div>
+
+    <section class="testimonials-section">
+      <div class="testimonial-card">
+        <div class="name">Jyoti Dave</div>
+        <img
+          src="images/testimonial1.jpg"
+          alt="Testimonial by Jane Doe"
+          class="testimonial-image"
+        />
+        <div class="testimonial-text">Testimonial :</div>
+        <div class="content">
+          "This service completely exceeded my expectations. I highly recommend
+          it to everyone looking for quality and reliability."
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="name">John Smith</div>
+        <img
+          src="images/testimonial2.jpg"
+          alt="Testimonial by John Smith"
+          class="testimonial-image"
+        />
+        <div class="testimonial-text">Testimonial :</div>
+        <div class="content">
+          "The results were immediate and impressive. It made a huge difference
+          to our workflow, saving us a lot of time."
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="name">Alex Lee</div>
+        <img
+          src="images/testimonial3.webp"
+          alt="Testimonial by Alex Lee"
+          class="testimonial-image"
+        />
+        <div class="testimonial-text">Testimonial :</div>
+        <div class="content">
+          "Fantastic experience from start to finish. The support team was
+          incredibly helpful and quick to respond to my inquiries."
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <a href="https://www.instagram.com/Motopaws/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/checkpoint/601051028565049/?next=https%3A%2F%2Fwww.facebook.com%2Fmotopaws%2F"
+          target="_blank"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/@motopawstouchheart" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <div class="footer-right">@Copyrights2025</div>
+    </footer>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

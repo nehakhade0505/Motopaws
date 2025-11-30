@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #fff8eb;
+        font-family: "Open Sans", sans-serif;
+        color: #004b87;
+      }
+
+      .navbar-custom {
+        background-color: #ffd54f;
+        padding: 15px 0;
+      }
+
+      .navbar-custom .nav-link {
+        color: #004b87 !important;
+        font-weight: 500;
+      }
+
+      /* DESKTOP — hide small-screen logo */
+      .mobile-logo {
+        display: none;
+      }
+
+      /* MOBILE STYLES */
+      @media (max-width: 991px) {
+        /* Show logo on the right in mobile */
+        .mobile-logo {
+          display: block !important;
+        }
+
+        /* Hide the center logo on mobile */
+        .center-logo {
+          display: none !important;
+        }
+
+        /* Left align menu items */
+        #navMenu .navbar-nav {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          text-align: left !important;
+        }
+
+        #navMenu .nav-item {
+          width: 100%;
+          justify-content: flex-start !important;
+        }
+      }
+      /* footer */
+      .footer {
+        width: 100%;
+        background-color: #ffd454; /* yellow strip */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 40px; /* thinner strip */
+        box-sizing: border-box;
+      }
+
+      .footer-left a {
+        margin-right: 18px;
+        font-size: 22px;
+        color: #0e4a94;
+        text-decoration: none;
+      }
+
+      .footer-left a:hover {
+        opacity: 0.7;
+      }
+
+      .footer-right {
+        font-size: 16px;
+        color: #080f93;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .footer {
+          flex-direction: column;
+          text-align: center;
+          gap: 6px;
+        }
+      }
+
+      /* CSS for the "Our Story" Section */
+
+      :root {
+        --background-color: #fff8e1; /* Light cream/tan background */
+        --text-color: #333;
+        --blue-accent: #0379c6; /* A standard blue color for the accent */
+        --story-text-color: #0562c6; /* Blue text color for the story content */
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        font-family: "Open Sans", sans-serif;
+        color: var(--text-color);
+      }
+
+      /* ------------------- SECTION CONTAINER ------------------- */
+      .story-section {
+        display: flex; /* Use flexbox for side-by-side layout */
+        align-items: flex-start; /* Align items to the top */
+        padding: 40px 20px;
+        padding-top: 90px;
+        max-width: 1200px; /* Limit max width for better readability */
+        margin: 0 auto; /* Center the container on the page */
+      }
+
+      /* Adds the vertical blue line on the right, as seen in the original image */
+      .story-section::after {
+        content: "";
+        display: block;
+        width: 5px;
+        background-color: #a0c0e0; /* Slightly lighter blue for the vertical bar */
+        height: 100%; /* Stretch to the full height of the section */
+        margin-left: 30px;
+      }
+
+      /* ------------------- TITLE STYLING ------------------- */
+      .story-title-container {
+        /* Ensures the title container doesn't take up excessive space */
+        flex-shrink: 0;
+        margin-right: 40px;
+        line-height: 0.8; /* Reduce space between lines */
+
+        /* Apply Mochiy Pop One Font */
+        font-family: "Mochiy Pop P One", sans-serif;
+        font-weight: 300px; /* Mochiy Pop One is usually 400 */
+
+        font-size: 4em; /* Large text size */
+        color: var(--blue-accent);
+        text-align: center;
+      }
+      .title-line.our {
+        margin-bottom: 15px; /* This pushes 'Our' down, creating the distance */
+      }
+      .title-line {
+        display: block; /* Make each word a block element to stack them */
+        position: relative;
+
+        /* REMOVED: all ::after pseudo-elements that created the lines */
+      }
+
+      /* ------------------- TEXT CONTENT STYLING ------------------- */
+      .story-content {
+        /* Allows the content to fill the remaining space */
+        flex-grow: 1;
+        font-size: 1.1em;
+        line-height: 1.6;
+        /* Applying the blue color as seen in the image */
+        color: var(--story-text-color);
+      }
+
+      /* ------------------- RESPONSIVENESS ------------------- */
+      @media (max-width: 768px) {
+        .story-section {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .story-section::after {
+          /* Hide the vertical line when stacked */
+          display: none;
+        }
+
+        .story-title-container {
+          margin-right: 0;
+          margin-bottom: 30px;
+          font-size: 4em;
+        }
+
+        .story-content {
+          text-align: center;
+        }
+      }
+
+      /* shantanu image */
+      .single-image-container {
+        display: flex;
+        justify-content: center; /* centers the image */
+        padding-bottom: 25px;
+      }
+
+      .single-image-container img {
+        width: 100%; /* responsive full width */
+        max-width: 900px; /* controls maximum size */
+        height: auto; /* keeps proportions */
+        border-radius: 12px; /* optional, like your screenshot */
+      }
+
+      /* Collabs */
+      .collab-section {
+        text-align: left;
+        padding: 40px 20px 20px;
+        max-width: 1200px; /* same as story-section */
+        margin: 0 auto; /* centers the container */
+      }
+
+      .collab-title {
+        font-family: "Mochiy Pop P One", sans-serif;
+        font-size: 2.5rem;
+        color: #0379c6; /* blue like the screenshot */
+        margin-bottom: 20px;
+      }
+
+      /* 1. Container setup: Full width, hides overflow */
+      .logo-ticker-container {
+        /* Set width to 100vw (viewport width) to ensure it spans the entire screen,
+       and set left/right margin to 0 to prevent accidental scrolling on some browsers. */
+        width: 100vw;
+        margin-left: calc(
+          50% - 50vw
+        ); /* Centers the 100vw element, ensuring no gap */
+
+        overflow: hidden; /* This hides content that overflows the container */
+        background-color: #fce77a; /* Example background color from your image */
+        padding: 20px 0;
+      }
+
+      /* 2. Track setup: Sets up the flex row and triggers the animation */
+      .logo-ticker-track {
+        /* Use a very large width to accommodate all duplicated logos and ensure the animation works */
+        width: 200%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        /* Apply the animation */
+        animation: scroll-left 30s linear infinite;
+
+        /* REMOVED: animation-play-state: paused on hover */
+      }
+
+      /* 3. Logo styling */
+      .logo-ticker-track img {
+        /* Adjust these values as needed for your specific logos */
+        height: 60px; /* Example height for logos */
+        margin: 0 40px; /* Space between logos */
+        display: block;
+        flex-shrink: 0;
+
+        /* REMOVED: transition and opacity on hover */
+      }
+
+      /* 4. The Animation Keyframes (Unchanged) */
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          /* End position: Half the width of the track */
+          transform: translateX(-50%);
+        }
+      }
+
+      /* TEAM SECTION */
+      .team-section {
+        max-width: 1200px; /* aligns perfectly with Collaborations + Our Story */
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .team-title {
+        font-family: "Mochiy Pop P One", sans-serif;
+        font-size: 2.5rem;
+        color: #0379c6;
+        margin-bottom: 30px;
+        text-align: left; /* matches your alignment request */
+      }
+
+      /* Carousel layout */
+      .team-carousel-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .team-carousel {
+        display: flex;
+        gap: 25px;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .team-card {
+        background: #e1f4f7;
+        border-radius: 12px;
+        padding-bottom: 10px;
+        text-align: center;
+        width: 300px;
+        flex-shrink: 0;
+      }
+
+      .team-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .team-name {
+        margin: 10px 0 2px;
+        font-weight: 600;
+        color: #014c7e;
+      }
+
+      .team-location {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #0379c6;
+      }
+
+      /* Arrow buttons */
+      .team-arrow {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #0379c6;
+      }
+
+      .team-arrow:hover {
+        opacity: 0.6;
+      }
+
+      /* Mobile view */
+      @media (max-width: 768px) {
+        .team-carousel {
+          overflow-x: scroll;
+          scroll-snap-type: x mandatory;
+        }
+
+        .team-card {
+          scroll-snap-align: center;
+          width: 250px;
+        }
+
+        .team-arrow {
+          display: none; /* hide arrows on mobile */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Hamburger on left -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- MOBILE LOGO ON RIGHT -->
+        <a class="mobile-logo" href="homepage.html">
+          <img src="images/motopaws.png" alt="Logo" style="height: 45px" />
+        </a>
+
+        <!-- NAV MENU -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navMenu"
+        >
+          <ul
+            class="navbar-nav w-100 d-flex justify-content-between align-items-center text-center"
+          >
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="homepage.html">Home</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="ourwork.html">Our Work</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="help_us.html">Help Us</a>
+            </li>
+
+            <!-- CENTER LOGO (Desktop Only) -->
+            <li class="nav-item flex-fill center-logo">
+              <a class="navbar-brand d-flex justify-content-center" href="#">
+                <img
+                  src="images/motopaws.png"
+                  alt="Logo"
+                  style="height: 70px"
+                />
+              </a>
+            </li>
+
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="media.html">Media</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="story-section">
+      <div class="story-title-container">
+        <span class="title-line our" style="text-align: left">Our</span>
+        <span class="title-line story">Story</span>
+      </div>
+
+      <div class="story-content">
+        <p>
+          Moto Paws was founded by Shantanu Naidu in Pune, India, with the goal
+          of preventing road accidents involving stray dogs by fitting them with
+          reflective collars which would reflect light at night time - making it
+          easier to spot them . Naidu was inspired to start the organization
+          after witnessing many dogs being hit by cars. After writing a
+          heartfelt letter to Ratan Tata, Naidu received funding and support
+          from him, which helped the initiative expand to many cities across
+          multiple countries.
+        </p>
+      </div>
+    </section>
+
+    <!-- shantanu image -->
+    <div class="single-image-container">
+      <img src="images/ourstory.jpg" alt="Banner Image" />
+    </div>
+
+    <!-- Collabs -->
+    <section class="collab-section">
+      <h2 class="collab-title">Collaborations</h2>
+
+      <div class="logo-ticker-container">
+        <div class="logo-ticker-track">
+          <img src="images/pawfriend-logo.png" alt="Pawfriend Logo" />
+          <img src="images/keto.png" alt="Ketto Logo" />
+          <img src="images/rrsa.png" alt="NGO Logo" />
+          <img src="images/ihcl.png" alt="IHCL Logo" />
+          <img src="images/bodhi.png" alt="Boddhisattva Logo" />
+          <img src="images/tata.png" alt="TATA Logo" />
+
+          <img src="images/pawfriend-logo.png" alt="Pawfriend Logo" />
+          <img src="images/keto.png" alt="Ketto Logo" />
+          <img src="images/rrsa.png" alt="NGO Logo" />
+          <img src="images/ihcl.png" alt="IHCL Logo" />
+          <img src="images/bodhi.png" alt="Boddhisattva Logo" />
+          <img src="images/tata.png" alt="TATA Logo" />
+        </div>
+      </div>
+    </section>
+    <!-- Our Team -->
+    <section class="team-section">
+      <h2 class="team-title">Our Team</h2>
+
+      <div class="team-carousel-wrapper">
+        <button class="team-arrow left-arrow">&#10094;</button>
+
+        <div class="team-carousel">
+          <div class="team-card">
+            <img src="images/team (1).png" alt="Team Member 1" />
+            <p class="team-name">Poorva Kolhe</p>
+            <p class="team-location">Thane</p>
+          </div>
+
+          <div class="team-card">
+            <img src="images/team (2).png" alt="Team Member 2" />
+            <p class="team-name">Pranjal Sawant</p>
+            <p class="team-location">Pune</p>
+          </div>
+
+          <div class="team-card">
+            <img src="images/team (3).png" alt="Team Member 3" />
+            <p class="team-name">Tanushree Rane</p>
+            <p class="team-location">Goregaon</p>
+          </div>
+
+          <div class="team-card">
+            <img src="images/team.jpg" alt="Team Member 3" />
+            <p class="team-name">Kabir Rai</p>
+            <p class="team-location">Bandra</p>
+          </div>
+        </div>
+
+        <button class="team-arrow right-arrow">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <a href="https://www.instagram.com/Motopaws/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/checkpoint/601051028565049/?next=https%3A%2F%2Fwww.facebook.com%2Fmotopaws%2F#"
+          target="_blank"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/@motopawstouchheart" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <div class="footer-right">@Copyrights2025</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const carousel = document.querySelector(".team-carousel");
+
+      document.querySelector(".left-arrow").onclick = () => {
+        carousel.scrollBy({ left: -320, behavior: "smooth" });
+      };
+
+      document.querySelector(".right-arrow").onclick = () => {
+        carousel.scrollBy({ left: 320, behavior: "smooth" });
+      };
+    </script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </body>
+</html>

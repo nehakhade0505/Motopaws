@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our work</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+     <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* GENERAL */
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background-color: #fff8eb;
+        font-family: "Open Sans", sans-serif;
+        color: #004b87;
+        display: flex;
+        flex-direction: column;
+      }
+h2{font-family: "Mochiy Pop P One", sans-serif; }
+
+      /* ---------------- NAVBAR ---------------- */
+      .navbar-custom {
+        background-color: #ffd54f;
+        padding: 15px 0;
+      }
+
+      .navbar-custom .nav-link {
+        color: #004b87 !important;
+        font-weight: 500;
+      }
+
+      /* Hide mobile logo on desktop */
+      .mobile-logo {
+        display: none;
+      }
+
+      @media (max-width: 991px) {
+        .mobile-logo {
+          display: block !important;
+        }
+        .center-logo {
+          display: none !important;
+        }
+        #navMenu .navbar-nav {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          text-align: left !important;
+        }
+        #navMenu .nav-item {
+          width: 100%;
+          justify-content: flex-start !important;
+        }
+      }
+      /* FOOTER */
+      .footer {
+        width: 100%;
+        background-color: #ffd454;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 40px;
+        margin-top: auto; /* pushes footer to bottom */
+      }
+
+      .footer-left a {
+        margin-right: 18px;
+        font-size: 22px;
+        color: #0e4a94;
+        text-decoration: none;
+      }
+
+      .footer-left a:hover {
+        opacity: 0.7;
+      }
+
+      .footer-right {
+        font-size: 16px;
+        color: #080f93;
+      }
+
+      @media (max-width: 600px) {
+        .footer {
+          flex-direction: column;
+          text-align: center;
+          gap: 6px;
+        }
+      }
+
+      /* NGO CARDS */
+      .ngo-card {
+        background: #0d74d4;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 3px solid #0d74d4;
+      }
+
+      .card-header-custom {
+        background: #2c85dd;
+        padding: 20px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 400;
+        color: white;
+        font-family: "Mochiy Pop P One", sans-serif;
+      }
+
+      .card-img-custom {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+      }
+
+      .action-btn {
+        background-color: #ffd767;
+        padding: 12px 30px;
+        font-size: 20px;
+        border-radius: 40px;
+        font-weight: 600;
+        color: #004080;
+        border: none;
+        transition: all 0.25s ease-in-out;
+        box-shadow: 0px 4px 0px #e0b853;
+      }
+
+      .action-btn:hover {
+        background-color: #ffcd4f;
+        transform: scale(1.06);
+        box-shadow: 0px 6px 0px #d4a63c;
+      }
+
+      /* INITIATIVES */
+      .initiative-card {
+        border: 1px solid #dcdcdc;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        height: 100%;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .initiative-card h3 {
+        color: #004b87;
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .initiative-card p {
+        color: #3a3a3a;
+        font-size: 0.95rem;
+      }
+
+      /* MILESTONES */
+      .milestone-card {
+        background: #ffffff;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        text-align: center;
+        height: 100%;
+        border: 1px solid #dcdcdc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .milestone-icon-wrapper {
+        background-color: #e3f2fd;
+        color: #2e90cf;
+        border-radius: 50%;
+        padding: 1rem;
+        width: 4.5rem;
+        height: 4.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 0.75rem;
+      }
+
+      .milestone-icon-wrapper i {
+        font-size: 1.8rem;
+      }
+
+      .milestone-icon-title {
+        color: #004b87;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .milestone-card p {
+        color: #555;
+        font-size: 0.9rem;
+      }
+
+      .section-header {
+        margin: 60px 0 20px;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0379c6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container d-flex justify-content-between align-items-center">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="mobile-logo" href="homepage.html">
+          <img src="images/motopaws.png" alt="Logo" style="height: 65px" />
+        </a>
+
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navMenu"
+        >
+          <ul
+            class="navbar-nav w-100 d-flex justify-content-between align-items-center text-center"
+          >
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="homepage.html">Home</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="ourwork.html">Our Work</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="help_us.html">Help Us</a>
+            </li>
+
+            <li class="nav-item flex-fill center-logo">
+              <a class="navbar-brand d-flex justify-content-center" href="#">
+                <img
+                  src="images/motopaws.png"
+                  alt="Logo"
+                  style="height: 70px"
+                />
+              </a>
+            </li>
+
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="media.html">Media</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- NGO CARDS -->
+    <div class="container my-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="ngo-card">
+            <div class="card-header-custom">The Collar Project</div>
+            <img src="images/lhs.png" class="card-img-custom" />
+            <div class="text-center py-3">
+              <button class="action-btn">Donate Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="ngo-card">
+            <div class="card-header-custom">Feed a Friend</div>
+            <img src="images/mid.png" class="card-img-custom" />
+            <div class="text-center py-3">
+              <button class="action-btn">Donate Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="ngo-card">
+            <div class="card-header-custom">Rescue & Care</div>
+            <img src="images/rhs.png" class="card-img-custom" />
+            <div class="text-center py-3">
+              <button class="action-btn">Donate Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INITIATIVES -->
+    <div class="container">
+      <h2 class="section-header">Events and Initiatives</h2>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="initiative-card">
+            <h3>Monthly Collaring Drives</h3>
+            <p>
+              Monthly collaring drives held across city chapters, where
+              volunteers collar stray dogs with reflective collars.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="initiative-card">
+            <h3>Anti-Rabies Vaccination</h3>
+            <p>
+              Conducted with support from NGOs & welfare groups to help serve
+              public health and ensure dog wellbeing.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="initiative-card">
+            <h3>Rescues & Rehabilitation</h3>
+            <p>
+              Volunteers are trained to handle medical rescues and support
+              animals in distress.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MILESTONES -->
+      <h2 class="section-header">Milestones</h2>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="milestone-card">
+            <div class="milestone-icon-wrapper">
+              <i class="fa-solid fa-earth-asia"></i>
+            </div>
+            <h4 class="milestone-icon-title">Geographic Reach</h4>
+            <p>
+              Motopaws operates in 11 Indian cities and has expanded to Nepal
+              and Malaysia.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="milestone-card">
+            <div class="milestone-icon-wrapper">
+              <i class="fa-solid fa-hands-holding-child"></i>
+            </div>
+            <h4 class="milestone-icon-title">Volunteers</h4>
+            <p>
+              A network that grew from 15 founders to 200 passionate volunteers.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="milestone-card">
+            <div class="milestone-icon-wrapper">
+              <i class="fa-solid fa-dog"></i>
+            </div>
+            <h4 class="milestone-icon-title">Collars Distributed</h4>
+            <p>
+              Over 4,000 collars distributed by partner organizations by 2024.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 4: Funding -->
+        <div class="col-12 col-md-4">
+          <div class="milestone-card">
+            <div class="milestone-icon-wrapper">
+              <i class="fa-solid fa-sack-dollar"></i>
+            </div>
+            <h4 class="milestone-icon-title">Funding</h4>
+            <p>
+              Initially, 70% of the production costs were supported by Ratan
+              Tata. After he independently funded the project, with the
+              remaining 30% from volunteers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 5: Visibility -->
+        <div class="col-12 col-md-4">
+          <div class="milestone-card">
+            <div class="milestone-icon-wrapper">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h4 class="milestone-icon-title">Visibility</h4>
+            <p>
+              The collars are designed with excellent retro-reflective material,
+              increasing visibility of up to 1,000 feet to motorists at night.
+            </p>
+          </div>
+        </div>
+
+       <!-- Milestone 6: Collars Distributed (bottom right) --><div class="col-12 col-md-4">
+                <div class="milestone-card">
+                    <div class="milestone-icon-wrapper">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h4 class="milestone-icon-title">Data Collection </h4>
+                    <p>We emphasize gathering data on collared animals and have tested using unique QR identifiers on the collars to track their location, & details.</p>
+                </div>
+            </div>
+        </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-left">
+        <a href="https://instagram.com" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <div class="footer-right">@Copyrights2025</div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

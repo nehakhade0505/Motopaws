@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #fff8eb;
+        font-family: "Open Sans", sans-serif;
+        color: #004b87;
+      }
+      h3 {
+        font-family: "Mochiy Pop P One", sans-serif;
+        color: #0379c6;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+      }
+      .navbar-custom {
+        background-color: #ffd54f;
+        padding: 15px 0;
+      }
+
+      .navbar-custom .nav-link {
+        color: #004b87 !important;
+        font-weight: 500;
+      }
+
+      /* DESKTOP — hide small-screen logo */
+      .mobile-logo {
+        display: none;
+      }
+      .contact-form {
+        background-color: #0379c6;
+        padding: 30px;
+        border-radius: 15px;
+        width: 100%; /* responsive */
+        max-width: 500px; /* desktop max width */
+        box-shadow: 0px 4px 10px rgba(63, 59, 59, 0.1);
+      }
+
+      /* MOBILE STYLES */
+      @media (max-width: 991px) {
+        /* Show logo on the right in mobile */
+        .mobile-logo {
+          display: block !important;
+        }
+
+        /* Hide the center logo on mobile */
+        .center-logo {
+          display: none !important;
+        }
+        @media (max-width: 992px) {
+          .contact-form {
+            max-width: 100%; /* form becomes full-width on tablet/mobile */
+          }
+        }
+
+        /* Left align menu items */
+        #navMenu .navbar-nav {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          text-align: left !important;
+        }
+
+        #navMenu .nav-item {
+          width: 100%;
+          justify-content: flex-start !important;
+        }
+      }
+      .contact-container {
+        margin-right: 50px; /* space from right edge */
+
+        text-align: left;
+      }
+
+      .contact-title {
+        font-family: "Mochiy Pop P One", sans-serif;
+        font-size: 2rem;
+        color: #0379c6; /* Blue similar to image */
+        margin-bottom: 10px;
+      }
+
+      .contact-form {
+        background-color: #0379c6; /* Blue form */
+        padding: 30px;
+        border-radius: 15px;
+
+        width: 100%;
+        max-width: 500px; /* keeps it nicely sized on large screens */
+
+        box-shadow: 0px 4px 10px rgba(63, 59, 59, 0.1);
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-bottom: 1px solid #b0e0ff;
+        background: transparent;
+        color: white;
+        font-size: 1rem;
+      }
+
+      .contact-form input::placeholder,
+      .contact-form textarea::placeholder {
+        color: #fff3b5;
+      }
+
+      .contact-form textarea {
+        resize: none;
+        height: 80px;
+      }
+
+      .contact-container {
+        margin-left: 90px !important;
+      }
+
+      .contact-form button:hover {
+        background-color: #ffc107;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          justify-content: center;
+          padding: 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        .contact-container {
+          margin-left: 0 !important; /* resets desktop offset */
+          margin-top: 20px; /* adds spacing below the map */
+          text-align: left;
+        }
+      }
+      @media (max-width: 992px) {
+        .contact-container {
+          margin-left: 0 !important;
+          margin-top: 25px;
+          text-align: left !important;
+        }
+      }
+      .action-btn {
+        background-color: #ffd767;
+        padding: 12px 30px;
+        font-size: 20px;
+        border-radius: 40px;
+        font-weight: 600;
+        color: #004080;
+        border: none;
+        transition: all 0.25s ease-in-out;
+        box-shadow: 0px 4px 0px #e0b853;
+      }
+
+      .action-btn:hover {
+        background-color: #ffcd4f;
+        transform: scale(1.06);
+        box-shadow: 0px 6px 0px #d4a63c;
+      }
+
+      /* SOCIAL ICONS (Using Font Awesome for cleaner look) */
+      .social-icons a {
+        color: #004b87;
+        font-size: 25px;
+        margin-right: 15px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .social-icons a:hover {
+        transform: scale(1.15);
+      }
+
+      /* footer */
+      .footer {
+        width: 100%;
+        background-color: #ffda6b; /* yellow strip */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 40px; /* thinner strip */
+        box-sizing: border-box;
+      }
+
+      .footer-left a {
+        margin-right: 18px;
+        font-size: 22px;
+        color: #0e4a94;
+        text-decoration: none;
+      }
+
+      .footer-left a:hover {
+        opacity: 0.7;
+      }
+
+      .footer-right {
+        font-size: 16px;
+        color: #0510d6;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .footer {
+          flex-direction: column;
+          text-align: center;
+          gap: 6px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Hamburger on left -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- MOBILE LOGO ON RIGHT -->
+        <a class="mobile-logo" href="homepage.html">
+          <img src="images/motopaws.png" alt="Logo" style="height: 65px" />
+        </a>
+
+        <!-- NAV MENU -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navMenu"
+        >
+          <ul
+            class="navbar-nav w-100 d-flex justify-content-between align-items-center text-center"
+          >
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="homepage.html">Home</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="ourwork.html">Our Work</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="help_us.html">Help Us</a>
+            </li>
+
+            <!-- CENTER LOGO (Desktop Only) -->
+            <li class="nav-item flex-fill center-logo">
+              <a class="navbar-brand d-flex justify-content-center" href="#">
+                <img
+                  src="images/motopaws.png"
+                  alt="Logo"
+                  style="height: 70px"
+                />
+              </a>
+            </li>
+
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="media.html">Media</a>
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row align-items-start">
+        <!-- LEFT: MAP -->
+        <div class="col-md-6 mb-4">
+          <div class="map-box" style="max-width: 100%">
+            <h3 class="mb-3" style="color: #0379c6; font-weight: 600">
+              Our Location
+            </h3>
+
+            <div style="width: 100%; border-radius: 10px; overflow: hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.280153041293!2d73.77687997472672!3d18.561573268576776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf65b48ba85d%3A0x5980e3f0b7e0a1b4!2sMotoPaws!5e0!3m2!1sen!2sin!4v1701262000000!5m2!1sen!2sin"
+                width="100%"
+                height="360"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <br />
+
+            <p><strong>Address:</strong> MotoPaws HQ, Pimpri-Chinchwad, Pune</p>
+            <p><strong>Contact number:</strong> +91 98765 43210</p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:info@motopaws.com">info@motopaws.com</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT: CONTACT FORM -->
+        <div class="col-md-6 d-flex justify-content-start">
+          <div class="contact-container">
+            <div class="contact-title">Let's Get in Touch!</div>
+
+            <form class="contact-form">
+              <input type="text" placeholder="Name" required />
+              <input type="tel" placeholder="Contact number" required />
+              <textarea placeholder="Query / Message" required></textarea>
+              <button
+                class="action-btn"
+                style="border-radius: 48px; font-size: medium"
+              >
+                Submit
+              </button>
+            </form>
+
+            <!-- ICONS BELOW FORM -->
+            <div class="social-icons mt-3">
+              <a
+                href="https://www.instagram.com/Motopaws/"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/checkpoint/601051028565049/?next=https%3A%2F%2Fwww.facebook.com%2Fmotopaws%2F#"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/motopaws/about/"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@motopawstouchheart"
+                aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <a href="https://www.instagram.com/Motopaws/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/checkpoint/601051028565049/?next=https%3A%2F%2Fwww.facebook.com%2Fmotopaws%2F#"
+          target="_blank"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/@motopawstouchheart" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <div class="footer-right">@Copyrights2025</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

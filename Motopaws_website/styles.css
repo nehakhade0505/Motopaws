@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff8eb;
+}
+
+/* ---------------- STORY OF THE WEEK ---------------- */
+.story-section {
+  padding: 40px 20px;
+}
+
+.story-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.story-image {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.story-content {
+  max-width: 600px;
+}
+
+/* Apply Mochiy Pop One */
+.story-title {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 2rem;
+  color: #004aad;
+  margin-top: 0;
+}
+
+/* ---------------- TESTIMONIAL SECTION ---------------- */
+.testimonial-section {
+  background: #ffd647;
+  padding: 25px 15px;
+}
+
+.testimonial-heading {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.testimonial-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background: #f7f7f7;
+  width: 30%;
+  min-width: 220px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.name-label {
+  font-weight: bold;
+}
+
+.image-box {
+  width: 100%;
+  height: 150px;
+
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.testimonial-label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ---------------- DOG DIARIES ---------------- */
+.dog-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.dog-section h2 {
+  font-size: 2rem;
+  color: #004aad;
+}
